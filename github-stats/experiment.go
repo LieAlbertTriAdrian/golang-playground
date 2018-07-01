@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+    "encoding/csv"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -61,6 +62,24 @@ func main() {
 	fmt.Println(commits[0].GetSHA())
 	fmt.Println(commits[0].GetCommit().GetCommitter().GetDate())
 	fmt.Println(commits[0].GetCommit().GetAuthor().GetName())
+
+    file, err := os.Create("output/result.csv")
+
+    if err != nil {
+    	fmt.Println(err)
+    }
+
+    defer file.Close()
+
+    writer := csv.NewWriter(file)
+
+    defer writer.Flush()
+
+	err1 := writer.Write(repositoryList)
+
+	if err1 != nil {
+		fmt.Println("error writing the value of repository")
+	}
 
 	// fmt.Println(err)
 }
