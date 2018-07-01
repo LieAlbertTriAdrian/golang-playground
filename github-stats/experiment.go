@@ -3,7 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
 	"os"
+	"strings"
 
 	"github.com/google/go-github/github"
     "github.com/joho/godotenv"
@@ -16,6 +18,17 @@ func main() {
 	if err != nil {
 		fmt.Println("Error loading .env file")
 	}
+
+	bytes, err := ioutil.ReadFile("data/samples.txt")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	repositoryListInString := string(bytes)
+	repositoryList := strings.Split(repositoryListInString, "\n")
+
+	fmt.Println(repositoryList)
 
 	githubAccessToken := os.Getenv("GITHUB_ACCESS_TOKEN")
 

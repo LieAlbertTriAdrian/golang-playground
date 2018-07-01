@@ -15,6 +15,12 @@
 			"revision": ""
 		},
 		{
+			"checksumSHA1": "TO3IO7Xtt3WUh6QM+p5E3klNfhQ=",
+			"path": "github.com/ahl5esoft/golang-underscore",
+			"revision": "b9d574eb72fbe700bd8c08ac5f06765d045306cd",
+			"revisionTime": "2018-02-28T06:56:50Z"
+		},
+		{
 			"checksumSHA1": "CSPbwbyzqA6sfORicn4HFtIhF/c=",
 			"path": "github.com/davecgh/go-spew/spew",
 			"revision": "8991bc29aa16c548c550c7ff78260e27b9ab7c73",

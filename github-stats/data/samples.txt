@@ -1,0 +1,2 @@
+LieAlbertTriAdrian/golang-playground
+hashicorp/terraform
